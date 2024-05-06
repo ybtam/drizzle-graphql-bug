@@ -1,0 +1,19 @@
+{
+  "extends": "@repo/tsconfig/base.json",
+  "compilerOptions": {
+    "maxNodeModuleJsDepth": 10,
+    "outDir": "./dist",
+    "strictPropertyInitialization": false,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "utility/*": ["./src/utils/*"],
+      "test/*": ["./test/*"]
+    },
+    "module": "NodeNext"
+  },
+  "include": ["./src/**/*", "./test/**/*"]
+}

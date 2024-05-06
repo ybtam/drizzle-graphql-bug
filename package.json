@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "dotenv -- turbo dev",
+    "dev:apps": "dotenv -- turbo run dev --filter='./apps/*'",
+    "dev:packages": "dotenv -- turbo run dev --filter='./packages/*'",
+    "studio": "dotenv -- turbo studio",
+    "db:push": "dotenv -- turbo db:push",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "turbo": "^1.13.3"
+  },
+  "name": "qms",
+  "packageManager": "pnpm@9.0.6",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "dotenv-cli": "^7.4.1",
+    "typescript": "^5.4.5"
+  }
+}

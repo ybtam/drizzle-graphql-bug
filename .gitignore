@@ -1,0 +1,5 @@
+.env
+.turbo
+.next
+node_modules
+.idea

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalDotEnv": [".env"],
+  "pipeline": {
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**", ".next/**", ".next/cache/**"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "lint": {},
+    "dev": {
+      "cache": false,
+      "persistent": false
+    },
+    "studio": {
+      "cache": false,
+      "persistent": false
+    },
+    "db:push": {
+      "cache": false,
+      "persistent": false
+    }
+  }
+}
