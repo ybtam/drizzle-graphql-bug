@@ -1,6 +1,6 @@
 import {drizzle} from "drizzle-orm/node-postgres";
 import {Client} from "pg";
-import * as userSchema from '@/user/schema'
+import * as userSchema from '@/user'
 
 export const client = new Client({
   host: process.env.DB_HOST!,

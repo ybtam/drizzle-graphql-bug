@@ -12,16 +12,16 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "turbo": "^1.13.3"
+    "turbo": "^1.13.4"
   },
   "name": "qms",
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.1.2",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "dependencies": {
-    "dotenv-cli": "^7.4.1",
+    "dotenv-cli": "^7.4.2",
     "typescript": "^5.4.5"
   }
 }

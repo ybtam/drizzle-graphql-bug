@@ -1,8 +1,7 @@
 import {buildSchema} from "drizzle-graphql";
 import {db} from "../db";
-import {GraphQLObjectType, GraphQLSchema} from "graphql/type";
+import {GraphQLList, GraphQLObjectType, GraphQLSchema} from "graphql/type";
 import {GraphQLNonNull} from "graphql/type/definition";
-import {users} from "@/user/schema";
 
 export const { entities} = buildSchema(db)
 
@@ -12,26 +11,16 @@ export default function schemaBuilder() {
       name: "Query",
       fields: {
         ...entities.queries,
-
-      }
+        getUserLogs: {
+          resolve: () => [],
+          type: new GraphQLList(new GraphQLNonNull(entities.types.UserlogsItem)),
+        }
+      },
     }),
     mutation: new GraphQLObjectType({
       name: "Mutation",
       fields: {
-        ...entities.mutations,
-        addUser: {
-          type: new GraphQLNonNull(entities.types.UsersItem),
-          args: {
-            value: {
-              type: entities.inputs.UsersInsertInput
-            }
-          },
-          resolve: async (_, {value}) => {
-            const result = await db.insert(users).values(value).returning()
-
-            return result[0]
-          }
-        }
+        ...entities.mutations
       }
     }),
     types: [...Object.values(entities.types), ...Object.values(entities.inputs)],

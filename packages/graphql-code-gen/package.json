@@ -9,7 +9,7 @@
     "dev": "pnpm graphql-codegen --watch"
   },
   "dependencies": {
-    "@graphql-codegen/client-preset": "^4.2.5",
+    "@graphql-codegen/client-preset": "^4.2.6",
     "@graphql-codegen/typescript": "4.0.6",
     "@graphql-typed-document-node/core": "^3.2.0",
     "@parcel/watcher": "^2.4.1",
@@ -19,6 +19,6 @@
     "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/introspection": "4.0.3",
     "ts-node": "^10.9.2",
-    "tsup": "^8.0.2"
+    "tsup": "^8.1.0"
   }
 }
